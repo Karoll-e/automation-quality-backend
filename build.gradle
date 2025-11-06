@@ -29,6 +29,17 @@ java {
     targetCompatibility = JavaVersion.VERSION_16
 }
 
+sourceSets {
+    test {
+        java {
+            srcDirs = ['test/java']
+        }
+        resources {
+            srcDirs = ['test/resources']
+        }
+    }
+}
+
 ext {
     serenity_version = '4.3.2'
     cucumber_version = '7.31.0'
@@ -65,11 +76,14 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    systemProperties System.getProperties()
 }
 
 serenity {
     reports = ["single-page-html"]
 }
+
 gradle.startParameter.continueOnFailure = true
 
-test.finalizedBy(aggregate, reports)
+test.finalizedBy(aggregate)
