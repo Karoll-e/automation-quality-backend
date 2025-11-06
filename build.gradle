@@ -31,6 +31,7 @@ java {
 
 ext {
     serenity_version = '4.3.2'
+    cucumber_version = '7.31.0'
     junit_platform_launcher_version="1.13.0"
     cucumber_junit_platform_engine_version="7.31.0"
     junit_platform_suite_version="1.13.0"
@@ -50,6 +51,7 @@ dependencies {
         testImplementation "net.serenity-bdd:serenity-screenplay-rest:${serenity_version}"
         testImplementation "net.serenity-bdd:serenity-rest-assured:${serenity_version}"
         testImplementation "net.serenity-bdd:serenity-ensure:${serenity_version}"
+        testImplementation "io.cucumber:cucumber-java:${cucumber_version}"
         testImplementation "org.junit.platform:junit-platform-launcher:${junit_platform_launcher_version}"
         testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumber_junit_platform_engine_version}"
         testImplementation "org.junit.platform:junit-platform-suite:${junit_platform_suite_version}"
